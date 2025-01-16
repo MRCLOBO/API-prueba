@@ -1,0 +1,14 @@
+[
+    {
+    "id": "5094497",
+    "nombre":"Marcelo",
+    "accesorios": ["lentes","reloj"],
+    "estudiante": "si"
+},
+    {
+        "id": "1234567",
+        "nombre": "Ejemplo",
+        "accesorios":[],
+        "estudiante": "no"
+    }
+]
