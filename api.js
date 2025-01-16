@@ -4,6 +4,7 @@ const { filtrarUsuarios } = require("./filtrarUsuarios");
 const { validarUsuario, validarUsuarioParcial } = require("./usuariosSchema");
 const crypto = require("node:crypto");
 
+const PORT = process.env.PORT ?? 3000;
 const app = express();
 app.disable("x-powered-by");
 
@@ -110,8 +111,8 @@ app.options("/usuarios", (req, res) => {
 });
 
 //Servidor escuchando la conexion
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log(
-    "El servidor esta escuchando las conexiones en http://localhost:3000"
+    `El servidor esta escuchando las conexiones en http://localhost:${PORT}`
   );
 });
