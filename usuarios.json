@@ -10,5 +10,11 @@
         "nombre": "Ejemplo",
         "accesorios":[],
         "estudiante": "no"
+    },
+    {
+        "id": "101",
+        "nombre": "el pepe",
+        "accesorios":["lentes","reloj"],
+        "estudiante": "no"
     }
 ]

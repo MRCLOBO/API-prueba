@@ -1,4 +1,4 @@
-const z = require("zod");
+import z from "zod";
 
 const usuarioSchema = z.object({
   nombre: z
@@ -24,14 +24,13 @@ const usuarioSchema = z.object({
     .optional(),
 });
 
-function validarUsuario(object) {
+export function validarUsuario(object) {
   return usuarioSchema.safeParse(object);
 }
 
 //para poder hacer una actualizacion de los datos tendriamos que validar los datos, y para no
 //hacer de cada caso,podriamos hacer uso del esquema ya creado,solamente que agregamos la funcion
 //partial() en el para que todos los campos sean opcionales  y asi poder validar el dato a modificar
-function validarUsuarioParcial(object) {
+export function validarUsuarioParcial(object) {
   return usuarioSchema.partial().safeParse(object);
 }
-module.exports = { validarUsuario, validarUsuarioParcial };
