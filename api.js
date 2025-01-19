@@ -1,7 +1,8 @@
 import express, { json } from "express";
 //para importar la funcion require y poder importar JSONs
-import { usuariosRouter } from "./routes/usuarios.js";
+import { createUsuariosrouter } from "./routes/usuarios.js";
 import { corsMiddleware } from "./middlewares/cors.js";
+import { UsuarioModel } from "./models/databases/mysql/usuarios.js";
 
 const PORT = process.env.PORT ?? 3000;
 const app = express();
@@ -14,7 +15,7 @@ app.use((req, res, next) => {
   next();
 });
 //basicamente en esta parte redirigimos todas las consultas de cualquier metodo a "/usuarios" al archivo usuariosRouter que ya maneja todas las solicitudes
-app.use("/usuarios", usuariosRouter);
+app.use("/usuarios", createUsuariosrouter(UsuarioModel));
 
 //res.header("Access-Control-Allow-Origin", "http://localhost:8080");
 

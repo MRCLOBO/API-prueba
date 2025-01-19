@@ -11,7 +11,7 @@ const usuarioSchema = z.object({
     }),
   accesorios: z
     .array(
-      z.enum(["lentes", "reloj", "collar"], {
+      z.enum(["lentes", "reloj", "collar", "gorra"], {
         invalid_type_error: "Los accesorios deben de ser un array de strings",
       })
     )
